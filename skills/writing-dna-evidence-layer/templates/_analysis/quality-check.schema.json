@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Writing DNA Evidence Layer Quality Check",
+  "type": "object",
+  "required": [
+    "raw_file_count",
+    "index_coverage",
+    "meta_coverage",
+    "core_outputs"
+  ],
+  "properties": {
+    "raw_file_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "index_coverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "meta_coverage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "core_outputs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "missing_source_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
